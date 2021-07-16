@@ -1,0 +1,477 @@
+الشات بوت ترحب فيه وتساله عن حاله ويقدم لك بعض الخدمات
+
+
+
+
+
+هذا ملف الJSON 
+"intents": [
+    {
+      "intent": "الحال",
+      "examples": [
+        {
+          "text": "اخبار"
+        },
+        {
+          "text": "شخبارك"
+        },
+        {
+          "text": "شعلومك؟"
+        },
+        {
+          "text": "عساك طيب؟"
+        },
+        {
+          "text": "كيف حالك؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "الحال2",
+      "examples": [
+        {
+          "text": "الحمدلله"
+        },
+        {
+          "text": "بخير"
+        },
+        {
+          "text": "تمام"
+        },
+        {
+          "text": "في احسن حال"
+        },
+        {
+          "text": "لا بأس"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "الحضور",
+      "examples": [
+        {
+          "text": "عدد الحضور"
+        },
+        {
+          "text": "كم واحد موجود"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "اهلا"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلا"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "خدمات",
+      "examples": [
+        {
+          "text": "احتاج خدمه اخرى"
+        },
+        {
+          "text": "ايش عندكم خدمات ؟"
+        },
+        {
+          "text": "تقدر تخدمني ؟"
+        },
+        {
+          "text": "حاب استفسر منك"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "دورة_المياه",
+      "examples": [
+        {
+          "text": "الحمام"
+        },
+        {
+          "text": "بيت الراحة"
+        },
+        {
+          "text": "دورة المياه"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "روبوت",
+      "examples": [
+        {
+          "text": "روبوت"
+        },
+        {
+          "text": "كيف استخدم الروبوت"
+        },
+        {
+          "text": "ما هو الروبوت"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "شكر",
+      "examples": [
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "ما قصرت"
+        },
+        {
+          "text": "يعطيك العافيه"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "طعام",
+      "examples": [
+        {
+          "text": "اكل"
+        },
+        {
+          "text": "شراب"
+        },
+        {
+          "text": "مائدة الطعام"
+        },
+        {
+          "text": "ماي"
+        },
+        {
+          "text": "وين الاكل"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "وقت",
+      "examples": [
+        {
+          "text": "مدة الحفل"
+        },
+        {
+          "text": "وقت الحفل"
+        },
+        {
+          "text": "يبدا الحفل"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "webhooks": [
+    {
+      "url": "",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "دورة المياه",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "قريب من مائدة الطعام اتبع اللائحات هناك مب بتضيع"
+              },
+              {
+                "text": "الله يسلمك , تمشي سيدة من هناك وثاني لفة على يمينك تحصل دورة المياه اكرمك الله"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#دورة_المياه",
+      "dialog_node": "node_1_1626374020150"
+    },
+    {
+      "type": "standard",
+      "title": "وقت الحفل",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يبدأ الحفل ان شاء الله الساعه 8 وراح ينتهي في خلال ثلاث ساعات ممتعه, استمتع بوقتك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#وقت",
+      "dialog_node": "node_1_1626374171149",
+      "previous_sibling": "node_9_1626374115645"
+    },
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "أهلا وسهلااااا"
+              },
+              {
+                "text": "حياك الله , نورتنا"
+              },
+              {
+                "text": "مرحبااا بك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_2_1626370668654",
+      "previous_sibling": "node_8_1626449434573"
+    },
+    {
+      "type": "standard",
+      "title": "محادثة جانبية1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "الحمدلله بخير , وانت؟"
+              },
+              {
+                "text": "في احسن حال مع هذي الاجواء الطيبة "
+              },
+              {
+                "text": "الحمدلله طيب , تفضل "
+              },
+              {
+                "text": "تسلم على سؤالك , انا طيب. وانت عساك بخير ؟ "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#الحال",
+      "dialog_node": "node_2_1626372523118",
+      "previous_sibling": "node_1_1626374171149"
+    },
+    {
+      "type": "standard",
+      "title": "روبوت",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "سـالتني عن الروبوت جميل , راح يكون في الحفل قتال روبوتات كل روبوت راح يكون معه بالون والفايز اخر روبوت يحتفظ بالبالونه. وأما عن كيفية التحكم بالروبوت , فراح يكون عندك لوحتان تحكم. احداهما الظاهرة امامك وهذي تتحكم بحركة الروبوت (أمام ,خلف,يسار,يمين,توقف) والأخرى تتحكم بحركة الذراع."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#روبوت",
+      "dialog_node": "node_2_1626449057325",
+      "previous_sibling": "node_9_1626371336408"
+    },
+    {
+      "type": "standard",
+      "title": "شكر ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "حياك الله , واذا احتجت خدمات اخرى لا تتردد"
+              },
+              {
+                "text": "اتمنى ان ما قصرت معك وافدتك "
+              },
+              {
+                "text": "رضاك هو مبتغانا , في خدمتك اي وقت"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#شكر",
+      "dialog_node": "node_6_1626371729390",
+      "previous_sibling": "node_2_1626372523118"
+    },
+    {
+      "type": "standard",
+      "title": "اي شي ثاني؟",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "اقدر اخدمك بشي ثاني ؟"
+              },
+              {
+                "text": "سم ,بغيت شي بعد ؟ "
+              },
+              {
+                "text": "تفضل , لا تتردد اذا بغيت خدمه ثانيه"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "dialog_node": "node_8_1626449434573",
+      "previous_sibling": "node_2_1626449057325"
+    },
+    {
+      "type": "standard",
+      "title": "خدماتنا",
+      "output": {
+        "generic": [
+          {
+            "title": "خدمات",
+            "options": [
+              {
+                "label": "اين مائدة الطعام؟",
+                "value": {
+                  "input": {
+                    "text": "اين مائدة الطعام؟"
+                  }
+                }
+              },
+              {
+                "label": "اين دورة المياه؟",
+                "value": {
+                  "input": {
+                    "text": "اين دورة المياه؟"
+                  }
+                }
+              },
+              {
+                "label": "متى وقت الحفل؟",
+                "value": {
+                  "input": {
+                    "text": "متى وقت الحفل؟"
+                  }
+                }
+              },
+              {
+                "label": "كم عدد الحضور؟",
+                "value": {
+                  "input": {
+                    "text": "كم عدد الحضور؟"
+                  }
+                }
+              },
+              {
+                "label": "حدثني عن الروبوت",
+                "value": {
+                  "input": {
+                    "text": "حدثني عن الروبوت"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1626449434573"
+      },
+      "conditions": "#خدمات",
+      "dialog_node": "node_9_1626371336408",
+      "previous_sibling": "node_6_1626371729390"
+    },
+    {
+      "type": "standard",
+      "title": "مائدة الطعام",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "الله يسلمك , تمشي سيدة من هناك وثاني لفة على يسارك تحصل مائدة الطعام وبالعافية عليك"
+              },
+              {
+                "text": "تحصل مائدة الطعام حول دورة المياه وانت بكرامة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#طعام",
+      "dialog_node": "node_9_1626374115645",
+      "previous_sibling": "node_1_1626374020150"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": false,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Chatting",
+  "language": "ar",
+  "description": ""
+}
